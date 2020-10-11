@@ -33,6 +33,11 @@ def lcm(n1, n2):
 	else:
 		return n1
 
+def cleanBin(n, l):
+	r = bin(n)[2 : ]
+	while len(r) < l:
+		r = "0" + r
+
 def hcf(x, y):
    while(y):
        x, y = y, x % y
@@ -130,6 +135,16 @@ def primesUnder(n):
 		if isPrime(i):
 			r.append(i)
 			print(i, n - i)
+	return r
+
+def firstPrimes(n):
+	r = [2]
+	x = 3
+	while len(r) < n:
+		if isPrime(x):
+			r.append(x)
+			print(x, len(r), n - len(r))
+		x += 2
 	return r
 
 def primesBetween(x, y):
