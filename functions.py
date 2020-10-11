@@ -37,7 +37,8 @@ def cleanBin(n, l):
 	r = bin(n)[2 : ]
 	while len(r) < l:
 		r = "0" + r
-
+	return r
+	
 def hcf(x, y):
    while(y):
        x, y = y, x % y
