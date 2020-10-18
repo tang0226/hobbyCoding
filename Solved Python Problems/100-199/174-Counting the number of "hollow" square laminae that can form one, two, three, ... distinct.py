@@ -1,4 +1,3 @@
-#Counting the number of "hollow" square laminae that can form one, two, three, ... distinct arrangements
 def tiles(side, thickness):
 	return 4 * ((thickness * side) + (thickness * thickness))
 maxSide = 0

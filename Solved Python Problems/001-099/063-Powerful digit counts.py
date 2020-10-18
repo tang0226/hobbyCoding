@@ -1,4 +1,3 @@
-import math
 total = 0
 for base in range(1, 100):
 	for exp in range(1, 100):

@@ -8,19 +8,19 @@ def isPalindrome(n):
 
 results = []
 print("generating palindromic sums...")
-sUpper = 30000
-cUpper = 3000
-for s in range(1, sUpper):
+squareUpper = 30000
+cubeUpper = 3000
+for s in range(1, squareUpper):
 	odd = 0
 	if s % 2 == 0:
 		odd = 1
 	else:
 		odd = 2
-	for c in range(odd, cUpper, 2):
+	for c in range(odd, cubeUpper, 2):
 		n = (s * s) + (c * c * c)
 		if isPalindrome(n):
 			results.append(n)
-	print(s, sUpper - s)
+	print(s, squareUpper - s)
 print("sorting..")
 results.sort()
 print("checking")

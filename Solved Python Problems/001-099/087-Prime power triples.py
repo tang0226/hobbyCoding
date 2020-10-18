@@ -24,9 +24,9 @@ def primesUnder(n):
 upper = 50000000
 nums = [0] * upper
 
-squares = primesUnder(upper ** (1 / 2))
-cubes = primesUnder(upper ** (1 / 3))
-fourths = primesUnder(upper ** (1 / 4))
+squares = primesUnder(int(upper ** (1 / 2)))
+cubes = primesUnder(int(upper ** (1 / 3)))
+fourths = primesUnder(int(upper ** (1 / 4)))
 
 total = 0
 

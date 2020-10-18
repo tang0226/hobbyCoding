@@ -1,5 +1,5 @@
 def tiles(side, thickness):
-	return 4 * ((thickness * side) + (thickness * thickness))
+	return 4 * thickness * (side + thickness)
 maxSide = 0
 maxThickness = 0
 upper = 1000000

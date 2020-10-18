@@ -33,6 +33,9 @@ def lcm(n1, n2):
 	else:
 		return n1
 
+def concat(n1, n2):
+	return int(str(n1) + str(n2))
+
 def cleanBin(n, l):
 	r = bin(n)[2 : ]
 	while len(r) < l:
