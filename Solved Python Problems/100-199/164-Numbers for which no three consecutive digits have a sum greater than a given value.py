@@ -8,7 +8,6 @@ for i in range(100):
 		counts.append(0)
 
 digits = 20
-
 for i in range(digits - 3):
 	new = [0] * 100
 	for j in range(100):

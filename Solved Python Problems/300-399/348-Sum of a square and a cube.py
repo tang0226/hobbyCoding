@@ -1,4 +1,5 @@
 import math
+# isPalindrome function
 def isPalindrome(n):
 	s = str(n)
 	n = len(s) / 2
@@ -10,6 +11,7 @@ results = []
 print("generating palindromic sums...")
 squareUpper = 30000
 cubeUpper = 3000
+# produce valid numbers
 for s in range(1, squareUpper):
 	odd = 0
 	if s % 2 == 0:
@@ -22,8 +24,10 @@ for s in range(1, squareUpper):
 			results.append(n)
 	print(s, squareUpper - s)
 print("sorting..")
+# after producing the numbers, sort
 results.sort()
 print("checking")
+# find the first 5 that appear exactly 4 times
 total = 0
 for i in range(len(results) - 5):
 	if results[i] == results[i + 1] == results[i + 2] == results[i + 3] != results[i + 4]:
