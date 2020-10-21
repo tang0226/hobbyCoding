@@ -38,9 +38,7 @@ def concat(n1, n2):
 
 def cleanBin(n, l):
 	r = bin(n)[2 : ]
-	while len(r) < l:
-		r = "0" + r
-	return r
+	return "0" * (l - len(r)) + r
 	
 def hcf(x, y):
    while(y):
