@@ -24,6 +24,7 @@ def factorArray(n):
 				factors.append(i)
 	factors.sort()
 	return factors
+
 def rad(n):
 	r = 1
 	if isPrime(n):
@@ -32,23 +33,6 @@ def rad(n):
 		if isPrime(i):
 			r *= i
 	return r
-
-def bubbleSort(values):
-	l = len(values)
-	valuesUse = values
-	for end in range(l - 1, 0, -1):
-		for start in range(0, end):
-			if valuesUse[start][0] > valuesUse[start + 1][0]:
-				store = valuesUse[start]
-				valuesUse[start] = valuesUse[start + 1]
-				valuesUse[start + 1] = store
-			elif not(valuesUse[start + 1][0] > valuesUse[start][0]):
-				if valuesUse[start][1] > valuesUse[start + 1][1]:
-					store = valuesUse[start]
-					valuesUse[start] = valuesUse[start + 1]
-					valuesUse[start + 1] = store
-			print(valuesUse[9999][1], end)
-	return valuesUse
 
 data = []
 for i in range(1, 100001):

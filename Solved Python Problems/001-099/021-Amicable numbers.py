@@ -1,19 +1,28 @@
 import math
-total = 0
-def d(num):
-  total = 1
-  for i in range(2, math.floor(math.sqrt(num)) + 1):
-    if num % i == 0:
-      if num / i == i:
-        total += i
-      else:
-        total += math.floor(num / i) + i
-  return total
-print(d(10))
-for i in range(1, 10001):
-  test1 = i
-  test2 = d(i)
-  if d(test2) == i and test1 != test2:
-    total += d(test2) + i
-print(math.floor(total / 2))
 
+# my d function
+def d(n):
+	if n == 1:
+		return 1
+	factors = 1
+	for i in range(2, math.floor(math.sqrt(n)) + 1):
+		if n % i == 0:
+			factors += i
+			if n / i != i:
+				factors += int(n / i)
+	return factors
+
+total = 0
+
+# find amicable number pairs
+for a in range(1, 10000):
+	b = d(a)
+	if b != a and d(b) == a:
+		total += a + b
+		print(a, b)
+
+# don't count repeats
+total = int(total / 2)
+
+# print the result
+print(total)
