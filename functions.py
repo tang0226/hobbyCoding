@@ -1,4 +1,4 @@
-import math
+from math import *
 
 def isPrime(n):
 	if n < 2:
@@ -15,7 +15,10 @@ def isPrime(n):
 	return True
 
 def isInt(n):
-	return n % 1 == 0
+	return n - floor(n) == 0
+
+def isSquare(n):
+	return isInt(n ** (1 / 2))
 
 def lcm(n1, n2):
 	if n1 > n2:
@@ -66,7 +69,7 @@ def bubbleSort(values):
 	return valuesUse
 
 def choose(n, k):
-	return int(math.factorial(n) / (math.factorial(k) * math.factorial(n - k)))
+	return int(factorial(n) / (factorial(k) * factorial(n - k)))
 
 def digitSum(n):
 	s = str(n)
@@ -79,7 +82,7 @@ def factorArray(n):
 	if n == 1:
 		return [1]
 	factors = [1, n]
-	for i in range(2, math.floor(math.sqrt(n)) + 1):
+	for i in range(2, floor(sqrt(n)) + 1):
 		if n % i == 0:
 			factors.append(i)
 			if n / i != i:
@@ -99,10 +102,10 @@ def permutation(digits, permNum):
 	perm = ""
 	permNum1 = permNum - 1
 	for i in range(0, len(digits1)):
-		fact = math.factorial(currFact)
-		perm += str(digits1.pop(math.floor(permNum1 / fact)))
-		if permNum1 - fact * math.floor(permNum1 / fact) >= 0:
-			permNum1 -= fact * math.floor(permNum1 / fact)
+		fact = factorial(currFact)
+		perm += str(digits1.pop(floor(permNum1 / fact)))
+		if permNum1 - fact * floor(permNum1 / fact) >= 0:
+			permNum1 -= fact * floor(permNum1 / fact)
 		currFact -= 1
 	return perm
 
@@ -112,9 +115,13 @@ def primeFactorization(n):
 	if isPrime(currNum):
 		return [currNum]
 	while not(isPrime(currNum)):
-		for i in range(2, math.ceil(n / 2) + 1):
+		if currNum % 2 == 0:
+			currNum = round(currNum / 2)
+			factorization.append(2)
+			continue
+		for i in range(3, ceil(n / 2) + 1, 2):
 			if currNum % i == 0:
-				currNum = int(currNum / i)
+				currNum = round(currNum / i)
 				factorization.append(i)
 				break
 	factorization.append(currNum)
@@ -171,7 +178,7 @@ def factorSum(n):
 	if n == 1:
 		return 1
 	factors = n + 1
-	for i in range(2, math.floor(math.sqrt(n)) + 1):
+	for i in range(2, floor(sqrt(n)) + 1):
 		if n % i == 0:
 			factors += i
 			if n / i != i:
@@ -183,7 +190,7 @@ def factorCount(n):
 	if n == 1:
 		return 1
 	factors = 2
-	for i in range(2, math.floor(math.sqrt(n)) + 1):
+	for i in range(2, floor(sqrt(n)) + 1):
 		if n % i == 0:
 			factors += 1
 			if n / i != i:
